@@ -684,7 +684,7 @@ namespace mINI
 		bool operator<<(INIStructure& data)
 		{
 			struct stat buf;
-			bool fileExists = (stat(filename.c_str(), &buf) == 0);
+			bool fileExists = (stat((char*)filename.c_str(), &buf) == 0);
 			if (!fileExists)
 			{
 				INIGenerator generator(filename);
